@@ -1,6 +1,6 @@
-package DAO;
+package com.example.shopeasy.dao;
 
-import Model.User;
+import com.example.shopeasy.model.User;
 
 import java.sql.*;
 

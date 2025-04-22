@@ -1,10 +1,20 @@
-package Model;
+package com.example.shopeasy.model;
 
 public class CartItem {
     private int cartItemId;
     private int userId;
     private int productId;
     private int quantity;
+
+    public CartItem() {
+        // Default constructor
+    }
+
+    public CartItem(int userId, int productId, int quantity) {
+        this.userId = userId;
+        this.productId = productId;
+        this.quantity = quantity;
+    }
 
     public int getCartItemId() {
         return cartItemId;
@@ -36,5 +46,15 @@ public class CartItem {
 
     public void setQuantity(int quantity) {
         this.quantity = quantity;
+    }
+
+    @Override
+    public String toString() {
+        return "CartItem{" +
+                "cartItemId=" + cartItemId +
+                ", userId=" + userId +
+                ", productId=" + productId +
+                ", quantity=" + quantity +
+                '}';
     }
 }

@@ -1,4 +1,4 @@
-package Model;
+package com.example.shopeasy.model;
 
 import java.sql.Timestamp;
 

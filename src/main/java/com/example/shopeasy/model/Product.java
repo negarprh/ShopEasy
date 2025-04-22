@@ -1,4 +1,4 @@
-package Model;
+package com.example.shopeasy.model;
 
 public class Product {
     private int productId;
@@ -60,11 +60,11 @@ public class Product {
         this.size = size;
     }
 
-    public String getcolor() {
+    public String getColor() {
         return color;
     }
 
-    public void setcolor(String color) {
+    public void setColor(String color) {
         this.color = color;
     }
 

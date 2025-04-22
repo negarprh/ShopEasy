@@ -1,4 +1,4 @@
-package DAO;
+package com.example.shopeasy.dao;
 
 import java.sql.Connection;
 import java.sql.DriverManager;

@@ -1,21 +1,19 @@
-package Model;
+package com.example.shopeasy.model;
 
-public class Admin extends Person {
-    private int adminId;
+public class User extends Person {
+    private int userId;
     private String username;
     private String password;
     private String role;
 
-    // Getter and Setter for adminId
-    public int getAdminId() {
-        return adminId;
+    public int getUserId() {
+        return userId;
     }
 
-    public void setAdminId(int adminId) {
-        this.adminId = adminId;
+    public void setUserId(int userId) {
+        this.userId = userId;
     }
 
-    // Getter and Setter for username
     public String getUsername() {
         return username;
     }
@@ -24,7 +22,6 @@ public class Admin extends Person {
         this.username = username;
     }
 
-    // Getter and Setter for password
     public String getPassword() {
         return password;
     }
@@ -33,7 +30,6 @@ public class Admin extends Person {
         this.password = password;
     }
 
-    // Getter and Setter for role
     public String getRole() {
         return role;
     }

@@ -1,6 +1,6 @@
-package com.example.shopeasy;
+package com.example.shopeasy.controller;
 
-import DAO.DatabaseSchema;
+import com.example.shopeasy.dao.DatabaseSchema;
 import jakarta.servlet.ServletContextEvent;
 import jakarta.servlet.ServletContextListener;
 import jakarta.servlet.annotation.WebListener;

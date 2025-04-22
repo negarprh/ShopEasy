@@ -1,4 +1,4 @@
-package DAO;
+package com.example.shopeasy.dao;
 
 import java.sql.Connection;
 import java.sql.SQLException;
@@ -23,6 +23,11 @@ public class DatabaseSchema {
                             ")"
             );
             System.out.println("Users table created.");
+            // testing data
+            stmt.execute("INSERT INTO users (user_id, username, password, email, role) " +
+                    "SELECT 1, 'testuser', '123', 'test@example.com', 'user' " +
+                    "WHERE NOT EXISTS (SELECT 1 FROM users WHERE user_id = 1)");
+            System.out.println("Default test user inserted (if not exists).");
 
             // Modify Products table to include image column
             stmt.execute(

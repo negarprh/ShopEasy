@@ -1,5 +1,5 @@
 <%--To Add/Modify/Delete Product To the Database (For Admin Only)--%>
-<%@ page import="java.sql.*, DAO.DBConnection" %>
+<%@ page import="java.sql.*, com.example.shopeasy.dao.DBConnection" %>
 <html>
 <head>
     <title>Admin Product Panel</title>
