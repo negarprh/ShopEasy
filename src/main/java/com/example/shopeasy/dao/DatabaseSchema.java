@@ -29,6 +29,12 @@ public class DatabaseSchema {
                     "WHERE NOT EXISTS (SELECT 1 FROM users WHERE user_id = 1)");
             System.out.println("Default test user inserted (if not exists).");
 
+            // Insert default admin
+            stmt.executeUpdate(
+                    "MERGE INTO users KEY(username) VALUES ('admin', 'admin123', 'admin@shopeasy.com', 'admin')"
+            );
+            System.out.println("Default admin user created or already exists.");
+
             // Modify Products table to include image column
             stmt.execute(
                     "CREATE TABLE IF NOT EXISTS products (" +
