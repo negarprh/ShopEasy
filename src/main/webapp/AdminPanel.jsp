@@ -1,16 +1,41 @@
 <%--To Add/Modify/Delete Product To the Database (For Admin Only)--%>
 <%@ page import="java.sql.*, DAO.DBConnection" %>
+<%
+    String role = (String) session.getAttribute("role");
+    if (role == null || !role.equals("admin")) {
+        response.sendRedirect("login.jsp");
+        return;
+    }
+%>
+
 <html>
 <head>
     <title>Admin Product Panel</title>
-    <style>
-        table { border-collapse: collapse; width: 80%; margin-top: 30px; }
-        th, td { padding: 10px; border: 1px solid #ccc; text-align: center; }
-        th { background-color: #eee; }
-        input, select, button { margin: 5px; }
-    </style>
+
+
+    <link rel="stylesheet" href="css/admin.css">
+
 </head>
 <body>
+
+<nav>
+    <a href="index.jsp">Home</a>
+    <a href="AdminPanel.jsp">Admin Panel</a>
+
+    <%
+        String user = (String) session.getAttribute("username");
+
+    %>
+
+    <div style="margin-left:auto;">
+        <% if (user != null) { %>
+        <span style="margin-right: 15px;">Hi, <%= user %></span>
+        <a href="LogoutServlet">Logout</a>
+        <% } %>
+    </div>
+</nav>
+
+
 
 <h2>Add / Modify / Delete Product</h2>
 

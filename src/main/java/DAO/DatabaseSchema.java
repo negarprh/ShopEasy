@@ -24,6 +24,12 @@ public class DatabaseSchema {
             );
             System.out.println("Users table created.");
 
+            // Insert default admin
+            stmt.executeUpdate(
+                    "MERGE INTO users KEY(username) VALUES ('admin', 'admin123', 'admin@shopeasy.com', 'admin')"
+            );
+            System.out.println("Default admin user created or already exists.");
+
             // Modify Products table to include image column
             stmt.execute(
                     "CREATE TABLE IF NOT EXISTS products (" +
