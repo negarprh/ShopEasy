@@ -46,8 +46,10 @@
                 String description = rs.getString("description");
                 double price = rs.getDouble("price");
                 String image = rs.getString("image");
+                int productId = rs.getInt("product_Id");
     %>
     <div class="product-card">
+        <a href="ProductDetails.jsp?id=<%= productId %>">
         <img src="<%= image != null ? image : "uploads/default.png" %>" alt="Product Image">
         <h3><%= name %></h3>
         <p>$<%= price %></p>
