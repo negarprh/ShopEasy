@@ -10,7 +10,7 @@ import java.io.IOException;
 import java.sql.SQLException;
 import java.util.List;
 
-@WebServlet("/cart")
+@WebServlet("/CartServlet")
 public class CartServlet extends HttpServlet {
 
     private CartItemDAO cartItemDAO;
@@ -23,36 +23,52 @@ public class CartServlet extends HttpServlet {
     @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-        String action = request.getParameter("action");
 
-        int userId = 1; // TODO: Replace with session-based user ID when login is added
-
-        if ("add".equals(action)) {
-            int productId = Integer.parseInt(request.getParameter("productId"));
-            int quantity = Integer.parseInt(request.getParameter("quantity"));
-            CartItem item = new CartItem(userId, productId, quantity);
-            try {
-                cartItemDAO.addCartItem(item);
-            } catch (SQLException e) {
-                throw new ServletException(e);
-            }
-        } else if ("remove".equals(action)) {
-            int cartItemId = Integer.parseInt(request.getParameter("cartItemId"));
-            try {
-                cartItemDAO.removeCartItem(cartItemId);
-            } catch (SQLException e) {
-                throw new ServletException(e);
-            }
+        HttpSession session = request.getSession(false);
+        if (session == null || session.getAttribute("user_id") == null) {
+            response.sendRedirect("login.jsp?message=loginRequired");
+            return;
         }
 
-        response.sendRedirect("cart.jsp");
+        int userId = (int) session.getAttribute("user_id");
+        String action = request.getParameter("action");
+
+        try {
+            if ("add".equals(action)) {
+                int productId = Integer.parseInt(request.getParameter("productId"));
+                int quantity = Integer.parseInt(request.getParameter("quantity"));
+
+                CartItem newItem = new CartItem(userId, productId, quantity);
+                cartItemDAO.addOrUpdateCartItem(newItem);  // ✅ Always check existing first
+
+            } else if ("remove".equals(action)) {
+                int cartItemId = Integer.parseInt(request.getParameter("cartItemId"));
+                cartItemDAO.removeCartItem(cartItemId);
+
+            } else if ("update".equals(action)) {
+                int cartItemId = Integer.parseInt(request.getParameter("cartItemId"));
+                int newQuantity = Integer.parseInt(request.getParameter("quantity"));
+                cartItemDAO.updateCartItemQuantity(cartItemId, newQuantity);
+            }
+
+            response.sendRedirect("CartServlet");
+
+        } catch (SQLException e) {
+            throw new ServletException(e);
+        }
     }
 
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
 
-        int userId = 1; // TODO: Replace with session-based user ID when login is added
+        HttpSession session = request.getSession(false);
+        if (session == null || session.getAttribute("user_id") == null) {
+            response.sendRedirect("login.jsp?message=loginRequired");
+            return;
+        }
+
+        int userId = (int) session.getAttribute("user_id");
 
         try {
             List<CartItem> cartItems = cartItemDAO.getCartItemsByUserId(userId);

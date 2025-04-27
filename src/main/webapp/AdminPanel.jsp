@@ -1,5 +1,5 @@
 <%--To Add/Modify/Delete Product To the Database (For Admin Only)--%>
-<%@ page import="java.sql.*, DAO.DBConnection" %>
+<%@ page import="java.sql.*, com.example.shopeasy.dao.DBConnection" %>
 <%
     String role = (String) session.getAttribute("role");
     if (role == null || !role.equals("admin")) {

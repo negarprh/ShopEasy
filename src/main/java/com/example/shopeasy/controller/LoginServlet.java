@@ -1,6 +1,6 @@
-package com.example.shopeasy;
+package com.example.shopeasy.controller;
 
-import DAO.DBConnection;
+import com.example.shopeasy.dao.DBConnection;
 import jakarta.servlet.ServletException;
 import jakarta.servlet.annotation.WebServlet;
 import jakarta.servlet.http.*;
@@ -15,6 +15,7 @@ public class LoginServlet extends HttpServlet {
 
         String username = request.getParameter("username");
         String password = request.getParameter("password");
+
 
         try (Connection conn = DBConnection.getConnection()) {
             PreparedStatement stmt = conn.prepareStatement(
@@ -32,6 +33,7 @@ public class LoginServlet extends HttpServlet {
                 HttpSession session = request.getSession();
                 session.setAttribute("username", username);
                 session.setAttribute("role", role);
+                session.setAttribute("user_id", rs.getInt("user_id"));
 
                 if ("admin".equals(role)) {
                     response.sendRedirect("AdminPanel.jsp");

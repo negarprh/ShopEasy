@@ -24,16 +24,29 @@ public class DatabaseSchema {
             );
             System.out.println("Users table created.");
             // testing data
-            stmt.execute("INSERT INTO users (user_id, username, password, email, role) " +
-                    "SELECT 1, 'testuser', '123', 'test@example.com', 'user' " +
-                    "WHERE NOT EXISTS (SELECT 1 FROM users WHERE user_id = 1)");
-            System.out.println("Default test user inserted (if not exists).");
+//            stmt.execute("INSERT INTO users (user_id, username, password, email, role) " +
+//                    "SELECT 1, 'testuser', '123', 'test@example.com', 'user' " +
+//                    "WHERE NOT EXISTS (SELECT 1 FROM users WHERE user_id = 1)");
+//            System.out.println("Default test user inserted (if not exists).");
 
             // Insert default admin
+//            stmt.executeUpdate(
+//                    "MERGE INTO users KEY(username) VALUES ('admin', 'admin123', 'admin@shopeasy.com', 'admin')"
+//            );
+//            System.out.println("Default admin user created or already exists.");
             stmt.executeUpdate(
-                    "MERGE INTO users KEY(username) VALUES ('admin', 'admin123', 'admin@shopeasy.com', 'admin')"
+                    "INSERT INTO users (username, password, email, role) " +
+                            "SELECT 'admin', 'admin123', 'admin@shopeasy.com', 'admin' " +
+                            "WHERE NOT EXISTS (SELECT 1 FROM users WHERE username = 'admin')"
             );
-            System.out.println("Default admin user created or already exists.");
+            stmt.executeUpdate(
+                    "INSERT INTO users (username, password, email, role) " +
+                            "SELECT 'usertest', 'user123', 'usertest@shopeasy.com', 'user' " +
+                            "WHERE NOT EXISTS (SELECT 1 FROM users WHERE username = 'usertest')"
+            );
+            System.out.println("Default test user created or already exists.");
+
+
 
             // Modify Products table to include image column
             stmt.execute(

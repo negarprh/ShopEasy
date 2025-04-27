@@ -1,6 +1,6 @@
-package com.example.shopeasy;
+package com.example.shopeasy.controller;
 
-import DAO.DBConnection;
+import com.example.shopeasy.dao.DBConnection;
 import jakarta.servlet.ServletException;
 import jakarta.servlet.annotation.WebServlet;
 import jakarta.servlet.http.*;

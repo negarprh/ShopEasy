@@ -1,4 +1,4 @@
-<%@ page import="java.sql.*, DAO.DBConnection" %>
+<%@ page import="java.sql.*, com.example.shopeasy.dao.DBConnection" %>
 <!DOCTYPE html>
 <html>
 <head>
@@ -26,6 +26,9 @@
         <% if ("admin".equals(role)) { %>
         <a href="AdminPanel.jsp">Admin Panel</a>
         <% } %>
+        <a href="CartServlet"> View Cart</a>
+
+
         <span style="margin-right: 15px;">Hi, <%= user %></span>
         <a href="LogoutServlet">Logout</a>
         <% } %>
@@ -47,12 +50,32 @@
                 double price = rs.getDouble("price");
                 String image = rs.getString("image");
     %>
+<%--    <div class="product-card">--%>
+<%--        <img src="<%= image != null ? image : "uploads/default.png" %>" alt="Product Image">--%>
+<%--        <h3><%= name %></h3>--%>
+<%--        <p>$<%= price %></p>--%>
+<%--        <p><%= description %></p>--%>
+<%--    </div>--%>
     <div class="product-card">
         <img src="<%= image != null ? image : "uploads/default.png" %>" alt="Product Image">
         <h3><%= name %></h3>
         <p>$<%= price %></p>
         <p><%= description %></p>
+
+        <form action="CartServlet" method="post">
+            <input type="hidden" name="action" value="add">
+            <input type="hidden" name="productId" value="<%= rs.getInt("product_id") %>">
+            <input type="hidden" name="quantity" value="1">
+            <button type="submit">Add to Cart</button>
+        </form>
+        <form action="ProductDetails" method="get">
+            <input type="hidden" name="id" value="<%= rs.getInt("product_id") %>">
+            <button type="submit">View Details</button>
+        </form>
+
+
     </div>
+
     <%
             }
         } catch (Exception e) {

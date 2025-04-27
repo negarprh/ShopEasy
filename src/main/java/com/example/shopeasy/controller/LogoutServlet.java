@@ -1,4 +1,4 @@
-package com.example.shopeasy;
+package com.example.shopeasy.controller;
 
 import jakarta.servlet.annotation.WebServlet;
 import jakarta.servlet.http.HttpServlet;
