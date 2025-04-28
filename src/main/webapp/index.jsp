@@ -63,7 +63,7 @@
     %>
 </div>
 <footer>
-    <p>© 2025 ShopEasy. All rights reserved.</p>
+    <p>2025 ShopEasy. All rights reserved.</p>
     <p>
         <a href="#">Privacy Policy</a> |
         <a href="#">Terms of Use</a> |
