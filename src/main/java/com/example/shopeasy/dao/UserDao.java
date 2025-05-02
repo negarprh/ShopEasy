@@ -5,17 +5,23 @@ import com.example.shopeasy.model.User;
 import java.sql.*;
 
 /**
- * The {@code UserDao} class provides methods for performing CRUD operations
- * on user-related data in the database.
+ * This DAO (Data Access Object) class handles database operations
+ * related to user management such as registration and login authentication.
+ * It interacts with the 'users' table in the database.
  *
- * <p>This class connects to the database using {@link DBConnection}
- * and handles logic such as user registration and login verification.</p>
+ * Used by servlets and other components that require user data access.
  *
- * @author Naomi
- * @version 1.0
+ * @author Betty
  */
 
 public class UserDao {
+
+    /**
+     * Registers a new user by inserting their information into the database.
+     *
+     * @param user the User object containing user details to be stored
+     */
+
     public void registerUser(User user) {
         String sql = "INSERT INTO users (username, password, email, role) VALUES (?, ?, ?, ?)";
 

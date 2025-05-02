@@ -5,6 +5,22 @@ import jakarta.servlet.ServletContextEvent;
 import jakarta.servlet.ServletContextListener;
 import jakarta.servlet.annotation.WebListener;
 
+
+/**
+ * This servlet context listener is triggered when the web application starts or stops.
+ * It initializes the database schema during application startup by calling
+ * {@link com.example.shopeasy.dao.DatabaseSchema#initializeSchema()}.
+ *
+ * Registered as a {@code @WebListener}, it ensures required tables are created
+ * and ready for use before handling any requests.
+ *
+ * Typical use case: Prepares the environment for the ShopEasy e-commerce app.
+ *
+ * This listener also logs a message when the application shuts down.
+ *
+ * @author Betty
+ */
+
 @WebListener
 public class ContextListenerServlet implements ServletContextListener {
 

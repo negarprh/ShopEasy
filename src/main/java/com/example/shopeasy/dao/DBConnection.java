@@ -4,6 +4,21 @@ import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.SQLException;
 
+
+/**
+ * Utility class for managing database connections to the H2 database.
+ * Provides methods to establish and close connections.
+ * Used throughout the application to interact with the database.
+ *
+ * Database: H2
+ * URL: jdbc:h2:~/clothingdb
+ *
+ * This class loads the H2 JDBC driver and manages connection lifecycle.
+ *
+ * @author Betty
+ */
+
+
 public class DBConnection {
     private static final String JDBC_URL = "jdbc:h2:~/clothingdb";
     private static final String DB_USER = "sa";

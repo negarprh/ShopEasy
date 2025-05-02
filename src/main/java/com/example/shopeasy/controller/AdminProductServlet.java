@@ -13,6 +13,14 @@ import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.SQLException;
 
+
+/**
+ * This servlet handles admin-side operations related to product management,
+ * such as adding, updating, or deleting products in the system.
+ *
+ * @author Betty
+ */
+
 @WebServlet("/AdminProductServlet")
 @MultipartConfig  // Enable file upload functionality
 public class AdminProductServlet extends HttpServlet {

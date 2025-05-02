@@ -4,6 +4,29 @@ import java.sql.Connection;
 import java.sql.SQLException;
 import java.sql.Statement;
 
+/**
+ * This utility class is responsible for initializing and setting up the
+ * database schema for the ShopEasy application. It creates necessary tables
+ * such as `users`, `products`, `orders`, and `cart_items`, and inserts default data.
+ *
+ * It is typically executed once during application setup or testing to ensure
+ * the database is correctly structured.
+ *
+ * Usage: Run the `main` method to initialize the schema.
+ *
+ * Note: This class connects to an H2 database via the {@link DBConnection} utility.
+ *
+ * Tables created:
+ * - users
+ * - products
+ * - orders
+ * - cart_items
+ *
+ * Default admin and test users are also inserted if they do not already exist.
+ *
+ * @author Betty
+ */
+
 public class DatabaseSchema {
     public static void initializeSchema() {
         Connection conn = null;
