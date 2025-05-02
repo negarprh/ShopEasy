@@ -112,11 +112,11 @@ This project follows the structure outlined in the final evaluation for `420-PA3
 | Error Handling          | Core            | Implement try/catch and user error messages            | All team            |
 | JavaDoc Documentation   | Documentation   | Add JavaDoc to all classes and methods                 | All team            |
 | GitHub Repo Setup       | Version Control | Initialize and push initial project                    | Negar               |
-| Branching for Team      | Version Control | Create branches per developer                          | Everyone            |
+| Branching for Team      | Version Control | Create branches per developer                          | All team            |
 | Final UI Styling        | UI              | Polish layout and make responsive                      | Negar               |
 | User Manual             | Documentation   | Write brief usage guide in `README.md`                 | Negar               |
-| Team Reflection         | Professional    | Prepare final 500-word team reflection                 | Team                |
-| Presentation Prep       | Professional    | Build final demo and slides                            | Team                |
+| Team Reflection         | Professional    | Prepare final 500-word team reflection                 | All team            |
+| Presentation Prep       | Professional    | Build final demo and slides                            | All team            |
 | Create Base Class       | OOP             | Inherit User/Admin from `Person`                       | Betty               |
 | Implement Interfaces    | OOP             | Implement `IUser`, `IProduct` (or Payable, etc.)       | Negar               |
 
