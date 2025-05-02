@@ -91,6 +91,36 @@ src/
 > "This project helped me understand how to design and build an end-to-end application using Java EE. I strengthened my understanding of Servlets, MVC architecture, JDBC integration, form validation, and Git workflows. It was a great opportunity to apply object-oriented programming concepts in a real-world context."
 
 ---
+## 📋 Project Task Backlog – ShopEasy
+
+This project follows the structure outlined in the final evaluation for `420-PA3-AS`. The frontend is built with JSP/CSS, backend with Java Servlets and JDBC, and deployed via Apache Tomcat.
+
+| Task Name               | Category        | Description                                            | Assigned To         |
+|-------------------------|-----------------|--------------------------------------------------------|---------------------|
+| Setup Project Structure | Core            | Initialize folders: model, dao, servlet, WEB-INF       | Negar               |
+| Create Database Schema  | Core            | Design tables: products, users, orders, cart_items     | Betty               |
+| Configure DB Connection | Core            | Create DB connection utility and test it               | Betty               |
+| Product Entity & DAO    | Core            | Create Product class and CRUD                          | Betty               |
+| User Entity & DAO       | Core            | Implement User class, login, and registration          | Betty               |
+| Order Entity & DAO      | Core            | Handle order storage and retrieval                     | Naomi               |
+| Basic UI Layout (JSP)   | UI              | Create `index.jsp` and layout templates with CSS       | Negar               |
+| Product Listing Page    | User            | List products using Servlet + JSTL                     | Negar, Naomi        |
+| Product Details Page    | User            | View detailed info when clicking product               | Betty               |
+| Cart Page               | User            | Add/view/remove items using session tracking           | Naomi               |
+| Checkout Page           | User            | Capture user info and process order                    | Naomi               |
+| Admin Panel (JSP)       | Admin           | Add/edit/delete products                               | Betty               |
+| Error Handling          | Core            | Implement try/catch and user error messages            | All team            |
+| JavaDoc Documentation   | Documentation   | Add JavaDoc to all classes and methods                 | All team            |
+| GitHub Repo Setup       | Version Control | Initialize and push initial project                    | Negar               |
+| Branching for Team      | Version Control | Create branches per developer                          | Everyone            |
+| Final UI Styling        | UI              | Polish layout and make responsive                      | Negar               |
+| User Manual             | Documentation   | Write brief usage guide in `README.md`                 | Negar               |
+| Team Reflection         | Professional    | Prepare final 500-word team reflection                 | Team                |
+| Presentation Prep       | Professional    | Build final demo and slides                            | Team                |
+| Create Base Class       | OOP             | Inherit User/Admin from `Person`                       | Betty               |
+| Implement Interfaces    | OOP             | Implement `IUser`, `IProduct` (or Payable, etc.)       | Negar               |
+
+---
 
 ## 👨‍💻 Author
 
