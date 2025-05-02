@@ -18,8 +18,11 @@
       object-fit: cover;
     }
   </style>
+  <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
+<%@ include file="navbar.jsp" %>
+
 <h2>All Products</h2>
 <%
   List<Product> products = (List<Product>) request.getAttribute("products");
@@ -32,5 +35,7 @@
   <a href="product-details?id=<%= p.getProductId() %>">View Details</a>
 </div>
 <% } %>
+
+<%@ include file="footer.jsp" %>
 </body>
 </html>

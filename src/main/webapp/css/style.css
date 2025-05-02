@@ -22,6 +22,9 @@ nav a {
     margin: 0 15px;
     font-weight: 600;
 }
+nav a:hover {
+    text-decoration: underline;
+}
 
 /* Hero section */
 .hero {
@@ -71,6 +74,46 @@ p {
     object-fit: cover;
     border-radius: 6px;
 }
+
+.product-card form {
+    margin-top: 10px;
+}
+
+.product-card button {
+    background-color: #333;
+    color: #fff;
+    border: none;
+    padding: 10px 15px;
+    margin: 5px 0;
+    border-radius: 6px;
+    cursor: pointer;
+    font-weight: 600;
+    width: 100%;
+    transition: background-color 0.3s ease;
+}
+
+.product-card button:hover {
+    background-color: #555;
+}
+.product-card form + form {
+    margin-top: 8px;
+}
+
+.form-container a {
+    display: inline-block;
+    margin-top: 15px;
+    color: #111;
+    text-decoration: none;
+    font-weight: 500;
+    transition: color 0.3s ease;
+}
+
+.form-container a:hover {
+    color: #555;
+    text-decoration: underline;
+}
+
+
 
 /* Footer */
 footer {

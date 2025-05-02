@@ -14,6 +14,7 @@
 
 
     <link rel="stylesheet" href="css/admin.css">
+    <link rel="stylesheet" href="css/style.css">
 
 </head>
 <body>
@@ -132,5 +133,6 @@
     %>
 </table>
 
+<%@ include file="footer.jsp" %>
 </body>
 </html>

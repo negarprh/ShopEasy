@@ -1,16 +1,14 @@
 package com.example.shopeasy.model;
 
-public class Product {
+public class Product implements IProduct {
     private int productId;
     private String name;
     private String description;
     private double price;
     private int stock;
-    private String size;      // S, M, L
-    private String color;  
-    private String image;     // Filename of uploaded image
-
-    // Getters and Setters
+    private String size;
+    private String color;
+    private String image;
 
     public int getProductId() {
         return productId;

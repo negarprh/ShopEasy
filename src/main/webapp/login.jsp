@@ -14,7 +14,7 @@
       text-align: center;
     }
     input {
-      width: 100%;
+      width: 93%;
       padding: 12px;
       margin: 15px 0;
       border: 1px solid #ccc;
@@ -35,14 +35,10 @@
       color: red;
       font-size: 0.9rem;
     }
-    a {
-      display: block;
-      margin-top: 15px;
-      color: #333;
-    }
   </style>
 </head>
 <body>
+<%@ include file="navbar.jsp" %>
 
 <div class="form-container">
   <h2>Login to ShopEasy</h2>
@@ -55,5 +51,6 @@
   <a href="signup.jsp">Dont have an account? Sign up</a>
 </div>
 
+<%@ include file="footer.jsp" %>
 </body>
 </html>

@@ -10,31 +10,8 @@
 </head>
 <body>
 
-<nav>
-    <a href="index.jsp">Home</a>
 
-    <%
-        String user = (String) session.getAttribute("username");
-        String role = (String) session.getAttribute("role");
-    %>
-
-    <div style="margin-left:auto;">
-        <% if (user == null) { %>
-        <a href="login.jsp">Login</a>
-        <a href="signup.jsp">Sign Up</a>
-        <% } else { %>
-        <% if ("admin".equals(role)) { %>
-        <a href="AdminPanel.jsp">Admin Panel</a>
-        <% } %>
-        <a href="CartServlet"> View Cart</a>
-
-
-        <span style="margin-right: 15px;">Hi, <%= user %></span>
-        <a href="LogoutServlet">Logout</a>
-        <% } %>
-    </div>
-</nav>
-
+    <%@ include file="navbar.jsp" %>
 
 <h1>Welcome to ShopEasy!</h1>
 
@@ -83,14 +60,8 @@
         }
     %>
 </div>
-<footer>
-    <p>© 2025 ShopEasy. All rights reserved.</p>
-    <p>
-        <a href="#">Privacy Policy</a> |
-        <a href="#">Terms of Use</a> |
-        <a href="AdminPanel.jsp">Admin Panel</a>
-    </p>
-</footer>
+
+    <%@ include file="footer.jsp" %>
 
 </body>
 </html>

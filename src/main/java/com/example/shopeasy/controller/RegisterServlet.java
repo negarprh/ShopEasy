@@ -17,6 +17,20 @@ public class RegisterServlet extends HttpServlet {
         String email = request.getParameter("email");
         String password = request.getParameter("password");
 
+        // Simple regex check for email format
+        if (!email.matches("^[A-Za-z0-9+_.-]+@[A-Za-z0-9.-]+$")) {
+            request.setAttribute("error", "Invalid email format.");
+            request.getRequestDispatcher("signup.jsp").forward(request, response);
+            return;
+        }
+
+        if (username == null || username.isBlank() || password.length() < 6) {
+            request.setAttribute("error", "Please fill out all fields correctly.");
+            request.getRequestDispatcher("signup.jsp").forward(request, response);
+            return;
+        }
+
+
         try (Connection conn = DBConnection.getConnection()) {
             PreparedStatement checkStmt = conn.prepareStatement(
                     "SELECT * FROM users WHERE username = ? OR email = ?"

@@ -1,6 +1,6 @@
 package com.example.shopeasy.model;
 
-public class User extends Person {
+public class User extends Person implements IUser {
     private int userId;
     private String username;
     private String password;

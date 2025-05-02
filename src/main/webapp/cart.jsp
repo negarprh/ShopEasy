@@ -16,16 +16,25 @@
       color: #333;
       margin-top: 30px;
     }
+    .cart-container {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+
 
     table {
       width: 90%;
       max-width: 900px;
       margin: 30px auto;
-      border-collapse: collapse;
+
       background-color: white;
       box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
-      border-radius: 10px;
       overflow: hidden;
+      border-collapse: separate;
+      border-spacing: 0;
+      border-radius: 12px;
+
     }
 
     th, td {
@@ -52,55 +61,90 @@
       text-align: center;
     }
 
-    button {
+    .btn {
       padding: 6px 12px;
-      background-color: #000;
-      color: #fff;
       border: none;
-      border-radius: 5px;
+      border-radius: 6px;
       cursor: pointer;
-      transition: background 0.3s ease;
+      font-weight: 600;
     }
 
-    button:hover {
+    .btn-update {
       background-color: #333;
+      color: white;
     }
+
+    .btn-update:hover {
+      background-color: #555;
+    }
+
+    .btn-remove {
+      background-color: #e60023;
+      color: white;
+    }
+
+    .btn-remove:hover {
+      background-color: #b3001b;
+    }
+
 
     .total {
       text-align: center;
-      font-size: 18px;
-      margin-top: 20px;
-      color: #111;
+      font-size: 22px;
+      margin-top: 30px;
+      font-weight: 600;
+      color: #222;
+      letter-spacing: 0.5px;
     }
 
     .checkout-link {
       text-align: center;
-      margin: 20px 0;
+      margin: 25px 0;
     }
 
     .checkout-link a {
-      background-color: #0077cc;
+      background-color: #007bff;
       color: white;
-      padding: 10px 20px;
+      padding: 12px 24px;
       text-decoration: none;
-      border-radius: 6px;
-      font-weight: bold;
+      border-radius: 8px;
+      font-weight: 600;
+      box-shadow: 0 4px 10px rgba(0, 123, 255, 0.2);
+      transition: background 0.3s, transform 0.2s;
+      display: inline-block;
     }
 
     .checkout-link a:hover {
-      background-color: #005fa3;
+      background-color: #0056b3;
+      transform: translateY(-2px);
     }
 
+    /* Updated empty message */
     .empty-message {
       text-align: center;
-      margin-top: 40px;
-      font-size: 18px;
-      color: #888;
+      margin-top: 80px;
+      font-size: 20px;
+      font-weight: 500;
+      color: #777;
+      opacity: 0.9;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
     }
 
+    .empty-message::before {
+      content: "🛒";
+      font-size: 50px;
+      margin-bottom: 15px;
+      opacity: 0.6;
+    }
+
+
   </style>
+  <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
+<%@ include file="navbar.jsp" %>
 
 <h2>Your Shopping Cart</h2>
 
@@ -109,6 +153,8 @@
   double total = 0;
   if (cartItems != null && !cartItems.isEmpty()) {
 %>
+
+<div class="cart-container">
 <table>
   <tr>
     <th>Product</th>
@@ -130,7 +176,7 @@
         <input type="hidden" name="action" value="update"/>
         <input type="hidden" name="cartItemId" value="<%= item.getCartItemId() %>"/>
         <input type="number" name="quantity" value="<%= item.getQuantity() %>" min="1"/>
-        <button type="submit">Update</button>
+        <button class="btn btn-update" type="submit">Update</button>
       </form>
     </td>
     <td>$<%= String.format("%.2f", subtotal) %></td>
@@ -138,7 +184,7 @@
       <form action="CartServlet" method="post">
         <input type="hidden" name="action" value="remove"/>
         <input type="hidden" name="cartItemId" value="<%= item.getCartItemId() %>"/>
-        <button type="submit">Remove</button>
+        <button class="btn btn-remove" type="submit">Remove</button>
       </form>
     </td>
   </tr>
@@ -149,10 +195,14 @@
 <div class="checkout-link">
   <a href="checkout">🧾 Proceed to Checkout</a>
 </div>
+</div>
 
 <% } else { %>
 <p class="empty-message">Your cart is empty.</p>
 <% } %>
 
+
+
+<%--<%@ include file="footer.jsp" %>--%>
 </body>
 </html>
