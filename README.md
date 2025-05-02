@@ -10,7 +10,7 @@ ShopEasy is a full-stack e-commerce web application built with **JSP**, **Servle
 ![Homepage](screenshots/homepage.png)
 
 ### 🧾 Product Detail
-![Product Detail](screenshots/product-detail.png)
+![Product Detail](screenshots/productdetail.png)
 
 ### 🛍️ Cart Page
 ![Cart Page](screenshots/cart.png)
