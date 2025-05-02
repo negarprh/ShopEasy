@@ -71,7 +71,7 @@ src/
 ## 📖 Setup Instructions
 
 1. Clone the repository  
-   `git clone https://github.com/yourusername/shopeasy.git`
+   `git clone https://github.com/negarprh/shopeasy.git`
 
 2. Import the project in IntelliJ (Java + Maven/EE)
 
