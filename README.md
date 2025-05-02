@@ -101,7 +101,7 @@ This project follows the structure outlined in the final evaluation for `420-PA3
 | Create Database Schema  | Core            | Design tables: products, users, orders, cart_items     | Betty               |
 | Configure DB Connection | Core            | Create DB connection utility and test it               | Betty               |
 | Product Entity & DAO    | Core            | Create Product class and CRUD                          | Betty               |
-| User Entity & DAO       | Core            | Implement User class, login, and registration          | Betty               |
+| User Entity & DAO       | Core            | Implement User class, login, and registration          | Negar               |
 | Order Entity & DAO      | Core            | Handle order storage and retrieval                     | Naomi               |
 | Basic UI Layout (JSP)   | UI              | Create `index.jsp` and layout templates with CSS       | Negar               |
 | Product Listing Page    | User            | List products using Servlet + JSTL                     | Negar, Naomi        |
