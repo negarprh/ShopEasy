@@ -2,12 +2,15 @@ package com.example.shopeasy.model;
 
 
 /**
- * Interface representing a user account in the system.
+ * Interface for user-related behavior, used to demonstrate abstraction.
+ * Implemented by the User model class.
+ *
+ * Author: Negar
  */
+
 public interface IUser {
-    int getUserId();
     String getUsername();
-    String getPassword();
     String getRole();
+    void setRole(String role);
 }
 

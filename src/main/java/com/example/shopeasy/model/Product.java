@@ -50,6 +50,12 @@ public class Product implements IProduct {
         this.stock = stock;
     }
 
+    @Override
+    public boolean isInStock() {
+        return stock > 0;
+    }
+
+
     public String getSize() {
         return size;
     }

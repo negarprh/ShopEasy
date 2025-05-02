@@ -8,6 +8,15 @@ import jakarta.servlet.http.*;
 import java.io.IOException;
 import java.sql.*;
 
+/**
+ * Handles user registration by validating input and inserting new user data into the database.
+ * Checks for duplicate usernames or emails.
+ * Automatically logs in the user after successful registration.
+ *
+ * @author Negar
+ */
+
+
 @WebServlet("/RegisterServlet")
 public class RegisterServlet extends HttpServlet {
     protected void doPost(HttpServletRequest request, HttpServletResponse response)

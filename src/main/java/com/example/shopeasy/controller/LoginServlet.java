@@ -8,6 +8,15 @@ import jakarta.servlet.http.*;
 import java.io.IOException;
 import java.sql.*;
 
+/**
+ * Handles user authentication by verifying credentials against the database.
+ * On success, stores user info in the session and redirects to the homepage.
+ * On failure, displays an error on the login page.
+ *
+ * @author Negar
+ */
+
+
 @WebServlet("/LoginServlet")
 public class LoginServlet extends HttpServlet {
     protected void doPost(HttpServletRequest request, HttpServletResponse response)

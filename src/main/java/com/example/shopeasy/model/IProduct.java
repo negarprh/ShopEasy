@@ -1,12 +1,14 @@
 package com.example.shopeasy.model;
 
 
-
 /**
- * Interface representing basic product information.
+ * Interface representing product behavior and basic data access.
+ * Used to abstract product-related operations.
+ *
+ * Author: Negar
  */
 public interface IProduct {
-    int getProductId();
     String getName();
     double getPrice();
+    boolean isInStock();
 }
