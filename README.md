@@ -41,7 +41,7 @@ ShopEasy is a full-stack e-commerce web application built with **JSP**, **Servle
 - **Java EE** (Servlets + JSP)
 - **JDBC** for database interaction
 - **HTML/CSS** for UI
-- **Oracle/MySQL** (JDBC-based)
+- **H2 Database** (H2 Database)
 - **Git & GitHub** for version control
 
 ---
